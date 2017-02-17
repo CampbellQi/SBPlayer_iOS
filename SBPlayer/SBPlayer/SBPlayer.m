@@ -391,7 +391,7 @@
             self.fullVC=[self pushToFullScreen];
             [self.player pause];
             [self.fullScreenPlayer seekToTime:self.item.currentTime];
-            [[self getCurrentVC] presentViewController:self.fullVC animated:YES completion:nil];
+            [[self getCurrentVC] presentViewController:self.fullVC animated:NO completion:nil];
         }
             break;
         case UIInterfaceOrientationPortraitUpsideDown:
@@ -412,7 +412,7 @@
                 }
                 [self.fullScreenPlayer remove];
                 self.fullScreenPlayer=nil;
-                [self.fullVC dismissViewControllerAnimated:YES completion:nil];
+                [self.fullVC dismissViewControllerAnimated:NO completion:nil];
             }
         }
             break;
