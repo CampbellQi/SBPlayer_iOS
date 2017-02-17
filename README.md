@@ -25,3 +25,4 @@
 * 邮件(956035125#qq.com, 把#换成@)
 * QQ: 956035125
 * github: [github](https://github.com/shibiao)
+* 详细请看简书： [简书](http://www.jianshu.com/p/ffe1bd598bf2)
