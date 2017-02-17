@@ -408,7 +408,7 @@
                     [self hideOrShowPauseView];
                 }
                 if (self.fullScreenPlayer.item.currentTime.value/self.fullScreenPlayer.item.currentTime.timescale>0) {
-                    [self.player seekToTime:self.fullScreenPlayer.currentTime];
+                    [self.player seekToTime:self.fullScreenPlayer.currentTime toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
                 }
                 [self.fullScreenPlayer remove];
                 self.fullScreenPlayer=nil;
@@ -466,7 +466,7 @@
     return result;
 }
 -(void)seekToTime:(CMTime)time{
-    [self.item seekToTime:time];
+    [self.item seekToTime:time toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
 }
 -(void)play{
     if (self.player!=nil ) {
