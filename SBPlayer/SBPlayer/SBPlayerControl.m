@@ -76,11 +76,7 @@ static const CGFloat padding=10.f;
     [bufferView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(sliderView);
         make.left.right.mas_equalTo(sliderView);
-        if ([self underIphone5s]) {
-            make.height.mas_equalTo(@(0.5f));
-        }else{
-            make.height.mas_equalTo(@1);
-        }
+        make.height.mas_equalTo(@1);
     }];
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.bottom.mas_equalTo(self).priorityHigh();
