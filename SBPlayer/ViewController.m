@@ -27,12 +27,6 @@
         make.height.mas_equalTo(@250);
         make.center.mas_equalTo(self.view);
     }];
-    NSString *path = [[NSBundle mainBundle]pathForResource:@"Source" ofType:@"bundle"];
-    NSBundle *resourceBundle = [NSBundle bundleWithPath:path];
-    NSString *stringPath = [resourceBundle bundlePath];
-    NSString *rootPath = [stringPath stringByAppendingString:@"/Root.plist"];
-    NSMutableDictionary *data = [[NSMutableDictionary alloc]initWithContentsOfFile:rootPath];
-    NSLog(@"path:%@",data);
     
 }
 -(NSURL *)url {
