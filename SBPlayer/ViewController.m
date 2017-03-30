@@ -27,11 +27,7 @@
         make.height.mas_equalTo(@250);
         make.center.mas_equalTo(self.view);
     }];
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
-    
 }
 -(NSURL *)url {
     NSURL *url=[NSURL URLWithString:@"http://download.3g.joy.cn/video/236/60236937/1451280942752_hd.mp4"];
