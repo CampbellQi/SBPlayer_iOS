@@ -27,6 +27,10 @@
         make.height.mas_equalTo(@250);
         make.center.mas_equalTo(self.view);
     }];
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     
 }
 -(NSURL *)url {
