@@ -505,6 +505,7 @@
     }
 }
 -(void)remove{
+
     [self.item removeObserver:self forKeyPath:@"status"];
     [self.item removeObserver:self forKeyPath:@"loadedTimeRanges"];
     [self.item removeObserver:self forKeyPath:@"playbackBufferEmpty"];
@@ -521,7 +522,6 @@
     [[NSNotificationCenter defaultCenter]removeObserver:self name:AVPlayerItemNewAccessLogEntryNotification object:[self.player currentItem]];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:AVPlayerItemNewErrorLogEntryNotification object:[self.player currentItem]];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:AVPlayerItemFailedToPlayToEndTimeErrorKey object:[self.player currentItem]];
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
     [self.item seekToTime:kCMTimeZero];
     self.assert=nil;
     [self.player setRate:0];
