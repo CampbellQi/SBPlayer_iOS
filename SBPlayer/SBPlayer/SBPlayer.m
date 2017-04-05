@@ -512,6 +512,7 @@
     [self.player removeObserver:self forKeyPath:@"rate"];
     [self.player removeObserver:self forKeyPath:@"timeControlStatus"];
     [self.playerControl removeObserver:self forKeyPath:@"scalling"];
+    [self.playPausedView removeObserver:self forKeyPath:@"backBtnTouched"];
     [self.player removeTimeObserver:self.playbackTimerObserver];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:AVPlayerItemTimeJumpedNotification object:[self.player currentItem]];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:AVPlayerItemTimeJumpedNotification object:[self.player currentItem]];
