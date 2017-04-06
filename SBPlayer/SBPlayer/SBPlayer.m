@@ -174,7 +174,9 @@
     _timer=[NSTimer scheduledTimerWithTimeInterval:5.f repeats:NO block:^(NSTimer * _Nonnull timer) {
         if (![self.playerControl isHidden]) {
             self.playerControl.hidden=YES;
-            _timer=nil;
+            if ([_timer isValid]) {
+                [_timer invalidate];
+            }
         }
     }];
 }
