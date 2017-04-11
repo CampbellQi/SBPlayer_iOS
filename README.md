@@ -16,8 +16,16 @@
 ##### 导入` #import "SBPlayer" `,用xib更简单，使用如下，方便简单
 
 ```
-    [self.sbview assetWithURL:[NSURL URLWithString:@"http://download.3g.joy.cn/video/236/60236937/1451280942752_hd.mp4"]];
-    [self.sbview setTitle:@"这是一个标题"];
+      //纯代码请用此种方法
+    self.player = [[SBPlayer alloc]initWithUrl:[NSURL    URLWithString:@"http://download.3g.joy.cn/video/236/60236937/1451280942752_hd.mp4"]];
+    //使用xib请用第二种方法
+//    [self.player assetWithURL:[NSURL URLWithString:@"http://download.3g.joy.cn/video/236/60236937/1451280942752_hd.mp4"]];
+    [self.player setTitle:@"这是一个标题"];
+    [self.view addSubview:self.player];
+    [self.player mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.right.left.mas_equalTo(self.view);
+        make.height.mas_equalTo(@250);
+    }];
 ```
 
 SBPlayer macOS版 : http://www.jianshu.com/p/1ad52c702190
