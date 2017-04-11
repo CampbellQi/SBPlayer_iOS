@@ -5,10 +5,10 @@
 ##### SBPlayer结构简单,可以`横屏竖屏`,支持`M3u8、mp4`等格式视频本地播放或者网络播放,通过masonry约束，适配各种尺寸iPhone。
 ***
 
-
+![3](https://github.com/shibiao/SBPlayer_iOS/blob/master/Images/23.gif)
 ![1](https://github.com/shibiao/SBPlayer_iOS/blob/master/Images/QQ20170411-153557.png)
 ![2](https://github.com/shibiao/SBPlayer_iOS/blob/master/Images/QQ20170411-153616.png)
-![3](https://github.com/shibiao/SBPlayer/blob/master/Images/4.gif)
+
 ***
 #### 使用方法：
 ##### 拖拽SBPlayer文件夹到项目中，然后倒入SBPlayer.h即可
@@ -18,14 +18,15 @@
 ```
       //纯代码请用此种方法
     self.player = [[SBPlayer alloc]initWithUrl:[NSURL    URLWithString:@"http://download.3g.joy.cn/video/236/60236937/1451280942752_hd.mp4"]];
-    //使用xib请用第二种方法
-//    [self.player assetWithURL:[NSURL URLWithString:@"http://download.3g.joy.cn/video/236/60236937/1451280942752_hd.mp4"]];
     [self.player setTitle:@"这是一个标题"];
     [self.view addSubview:self.player];
     [self.player mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.right.left.mas_equalTo(self.view);
         make.height.mas_equalTo(@250);
     }];
+        //使用xib请用第二种方法
+//    [self.player assetWithURL:[NSURL URLWithString:@"http://download.3g.joy.cn/video/236/60236937/1451280942752_hd.mp4"]];
+//    [self.player setTitle:@"这是一个标题"];
 ```
 
 SBPlayer macOS版 : http://www.jianshu.com/p/1ad52c702190
