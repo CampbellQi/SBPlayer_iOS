@@ -1,5 +1,5 @@
 # SBPlayer_iOS
-#### 2017.4.11对代码进行重构，修改全屏方式，使SBPlayer切换全屏流畅无比，代码量相对之前的SBPlayer少很多，并解决之前有使用者提到网络视频播放crash和全屏多次崩溃的问题，几乎没有多余代码，也更为合理。
+#### 2017.4.11对代码进行重构，修改全屏方式，使SBPlayer切换全屏流畅无比，代码量相对之前的SBPlayer少很多，并解决之前有网友提到网络视频播放crash和全屏多次崩溃的问题，几乎没有多余代码，也更为合理。
 
 #### 基于AVPlayer封装的轻量级播放器,可以播放本地网络视频,易于定制
 ##### SBPlayer结构简单,可以`横屏竖屏`,支持`M3u8、mp4`等格式视频本地播放或者网络播放,通过masonry约束，适配各种尺寸iPhone。
@@ -18,7 +18,7 @@
 ##### 导入` #import "SBPlayer" `,用xib更简单，使用如下，方便简单
 
 ```
-      //纯代码请用此种方法
+//   纯代码请用此种方法
     self.player = [[SBPlayer alloc]initWithUrl:[NSURL    URLWithString:@"http://download.3g.joy.cn/video/236/60236937/1451280942752_hd.mp4"]];
     [self.player setTitle:@"这是一个标题"];
     [self.view addSubview:self.player];
@@ -26,7 +26,7 @@
         make.top.right.left.mas_equalTo(self.view);
         make.height.mas_equalTo(@250);
     }];
-        //使用xib请用第二种方法
+//     使用xib请用第二种方法
 //    [self.player assetWithURL:[NSURL URLWithString:@"http://download.3g.joy.cn/video/236/60236937/1451280942752_hd.mp4"]];
 //    [self.player setTitle:@"这是一个标题"];
 ```
