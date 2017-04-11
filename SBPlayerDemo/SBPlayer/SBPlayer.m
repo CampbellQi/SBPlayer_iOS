@@ -72,6 +72,7 @@ static NSInteger count = 0;
     self = [super init];
     if (self) {
         _url = url;
+        [self setupPlayerUI];
         [self assetWithURL:url];
     }
     return self;
@@ -126,6 +127,7 @@ static NSInteger count = 0;
     [self addKVO];
     //添加消息中心
     [self addNotificationCenter];
+
 }
 //FIXME: Tracking time,跟踪时间的改变
 -(void)addPeriodicTimeObserver{

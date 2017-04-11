@@ -8,8 +8,9 @@
 
 #import "ViewController.h"
 #import "SBPlayer.h"
+#import <Masonry.h>
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet SBPlayer *sbview;
+@property (nonatomic,strong) SBPlayer *player;
 
 @end
 
@@ -17,14 +18,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.sbview assetWithURL:[NSURL URLWithString:@"http://download.3g.joy.cn/video/236/60236937/1451280942752_hd.mp4"]];
-    [self.sbview setTitle:@"这是一个标题"];
+    //纯代码请用此种方法
+    self.player = [[SBPlayer alloc]initWithUrl:[NSURL URLWithString:@"http://download.3g.joy.cn/video/236/60236937/1451280942752_hd.mp4"]];
+    //使用xib请用第二种方法
+//    [self.player assetWithURL:[NSURL URLWithString:@"http://download.3g.joy.cn/video/236/60236937/1451280942752_hd.mp4"]];
+    [self.player setTitle:@"这是一个标题"];
+    [self.view addSubview:self.player];
+    [self.player mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.right.left.mas_equalTo(self.view);
+        make.height.mas_equalTo(@250);
+    }];
     
 }
-BOOL flag;
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
 - (IBAction)playOrPause:(id)sender {
     
-    [self.sbview stop];
+    [self.player stop];
     
 }
 
