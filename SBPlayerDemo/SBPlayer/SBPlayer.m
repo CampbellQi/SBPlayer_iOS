@@ -298,8 +298,9 @@ static NSInteger count = 0;
 -(void)addTitle{
     [self addSubview:self.titleLabel];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self);
-        make.left.top.mas_equalTo(self).offset(12);
+        make.left.right.mas_equalTo(self);
+        make.top.mas_equalTo(self).offset(12);
+        make.width.mas_equalTo(self.mas_width);
     }];
 }
 -(void)addGestureEvent{
