@@ -49,7 +49,7 @@ typedef NS_ENUM(NSInteger,SBPlayerStatus){
 -(void)play;
 //暂停
 -(void)pause;
-//停止
+//停止 //移除当前视频播放下一个，调用Stop方法
 -(void)stop;
 
 @end
