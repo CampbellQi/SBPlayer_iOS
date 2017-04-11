@@ -15,6 +15,7 @@
 - (void)drawRect:(CGRect)rect {
     self.imageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.imageBtn setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+    [self.imageBtn setImage:[UIImage new] forState:UIControlStateHighlighted];
     [self.imageBtn setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateSelected];
     [self.imageBtn addTarget:self action:@selector(handleImageTapAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.imageBtn];

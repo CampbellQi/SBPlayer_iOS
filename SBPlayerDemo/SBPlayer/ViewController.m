@@ -28,7 +28,8 @@
         make.top.right.left.mas_equalTo(self.view);
         make.height.mas_equalTo(@250);
     }];
-    
+    UIImageView *imageView = [[UIImageView alloc]init];;
+    imageView.animationImages = @[];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
