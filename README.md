@@ -13,9 +13,9 @@
 
 ***
 #### 使用方法：
-##### 拖拽SBPlayer文件夹到项目中，并添加[Masonry](https://github.com/SnapKit/Masonry)约束第三方库，然后倒入SBPlayer.h即可
+##### 拖拽SBPlayer文件夹到项目中，并添加[Masonry](https://github.com/SnapKit/Masonry)约束第三方库，然后导入`SBPlayer.h`即可
 
-##### 导入` #import "SBPlayer" `,用xib更简单，使用如下，方便简单
+##### 导入` #import "SBPlayer" `,用xib更简单，使用如下：
 
 ```
 //   纯代码请用此种方法
