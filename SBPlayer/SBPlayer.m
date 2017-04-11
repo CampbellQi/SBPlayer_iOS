@@ -73,6 +73,7 @@ static NSInteger count = 0;
     if (self) {
         _url = url;
         [self assetWithURL:url];
+        [self setupPlayerUI];
     }
     return self;
 }
@@ -126,6 +127,7 @@ static NSInteger count = 0;
     [self addKVO];
     //添加消息中心
     [self addNotificationCenter];
+
 }
 //FIXME: Tracking time,跟踪时间的改变
 -(void)addPeriodicTimeObserver{
@@ -296,8 +298,9 @@ static NSInteger count = 0;
 -(void)addTitle{
     [self addSubview:self.titleLabel];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self);
-        make.left.top.mas_equalTo(self).offset(12);
+        make.left.right.mas_equalTo(self);
+        make.top.mas_equalTo(self).offset(12);
+        make.width.mas_equalTo(self.mas_width);
     }];
 }
 -(void)addGestureEvent{

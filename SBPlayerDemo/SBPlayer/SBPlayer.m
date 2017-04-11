@@ -72,8 +72,8 @@ static NSInteger count = 0;
     self = [super init];
     if (self) {
         _url = url;
-        [self setupPlayerUI];
         [self assetWithURL:url];
+        [self setupPlayerUI];
     }
     return self;
 }
