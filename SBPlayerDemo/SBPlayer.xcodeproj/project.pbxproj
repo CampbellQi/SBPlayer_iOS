@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F8D6F66403C3CDBFB880182 /* libPods-SBPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3E418D3CAA9BFF683D92CB /* libPods-SBPlayer.a */; };
+		915B155F1E9B541D00A29B4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 915B155E1E9B541D00A29B4F /* main.m */; };
+		915B15621E9B541D00A29B4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 915B15611E9B541D00A29B4F /* AppDelegate.m */; };
+		915B15651E9B541D00A29B4F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915B15641E9B541D00A29B4F /* ViewController.m */; };
+		915B15681E9B541D00A29B4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915B15661E9B541D00A29B4F /* Main.storyboard */; };
+		915B156A1E9B541D00A29B4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 915B15691E9B541D00A29B4F /* Assets.xcassets */; };
+		915B156D1E9B541D00A29B4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915B156B1E9B541D00A29B4F /* LaunchScreen.storyboard */; };
+		915B157C1E9B565C00A29B4F /* SBPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 915B157B1E9B565C00A29B4F /* SBPlayer.m */; };
+		915B157F1E9B662800A29B4F /* SBControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 915B157E1E9B662800A29B4F /* SBControlView.m */; };
+		915B15861E9B6BF100A29B4F /* full_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 915B15841E9B6BF100A29B4F /* full_screen.png */; };
+		915B15871E9B6BF100A29B4F /* full_screen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 915B15851E9B6BF100A29B4F /* full_screen@2x.png */; };
+		915B158A1E9B718B00A29B4F /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 915B15881E9B718B00A29B4F /* play.png */; };
+		915B158B1E9B718B00A29B4F /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 915B15891E9B718B00A29B4F /* play@2x.png */; };
+		915B158E1E9B73DD00A29B4F /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 915B158C1E9B73DD00A29B4F /* pause.png */; };
+		915B158F1E9B73DD00A29B4F /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 915B158D1E9B73DD00A29B4F /* pause@2x.png */; };
+		915B15911E9B8AAB00A29B4F /* knob.png in Resources */ = {isa = PBXBuildFile; fileRef = 915B15901E9B8AAB00A29B4F /* knob.png */; };
+		915B15B71E9C78A300A29B4F /* SBPauseOrPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 915B15B61E9C78A300A29B4F /* SBPauseOrPlayView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D3E418D3CAA9BFF683D92CB /* libPods-SBPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SBPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2414ECBAC18C549A299A0EA4 /* Pods-SBPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SBPlayer/Pods-SBPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		915B155A1E9B541D00A29B4F /* SBPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SBPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		915B155E1E9B541D00A29B4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		915B15601E9B541D00A29B4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		915B15611E9B541D00A29B4F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		915B15631E9B541D00A29B4F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		915B15641E9B541D00A29B4F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		915B15671E9B541D00A29B4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		915B15691E9B541D00A29B4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		915B156C1E9B541D00A29B4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		915B156E1E9B541D00A29B4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		915B157A1E9B565C00A29B4F /* SBPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBPlayer.h; sourceTree = "<group>"; };
+		915B157B1E9B565C00A29B4F /* SBPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBPlayer.m; sourceTree = "<group>"; };
+		915B157D1E9B662800A29B4F /* SBControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBControlView.h; sourceTree = "<group>"; };
+		915B157E1E9B662800A29B4F /* SBControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBControlView.m; sourceTree = "<group>"; };
+		915B15831E9B670900A29B4F /* SBCommonHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBCommonHeader.h; sourceTree = "<group>"; };
+		915B15841E9B6BF100A29B4F /* full_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = full_screen.png; sourceTree = "<group>"; };
+		915B15851E9B6BF100A29B4F /* full_screen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "full_screen@2x.png"; sourceTree = "<group>"; };
+		915B15881E9B718B00A29B4F /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		915B15891E9B718B00A29B4F /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
+		915B158C1E9B73DD00A29B4F /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		915B158D1E9B73DD00A29B4F /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = "<group>"; };
+		915B15901E9B8AAB00A29B4F /* knob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = knob.png; sourceTree = "<group>"; };
+		915B15B51E9C78A300A29B4F /* SBPauseOrPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBPauseOrPlayView.h; sourceTree = "<group>"; };
+		915B15B61E9C78A300A29B4F /* SBPauseOrPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBPauseOrPlayView.m; sourceTree = "<group>"; };
+		B39752AFD89E7FDF0F9AD8CF /* Pods-SBPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-SBPlayer/Pods-SBPlayer.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		915B15571E9B541D00A29B4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F8D6F66403C3CDBFB880182 /* libPods-SBPlayer.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4BD28495EF3AA636F0C9C521 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D3E418D3CAA9BFF683D92CB /* libPods-SBPlayer.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		915B15511E9B541D00A29B4F = {
+			isa = PBXGroup;
+			children = (
+				915B155C1E9B541D00A29B4F /* SBPlayer */,
+				915B155B1E9B541D00A29B4F /* Products */,
+				969E8AA3BD3FE25EC6F5487D /* Pods */,
+				4BD28495EF3AA636F0C9C521 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		915B155B1E9B541D00A29B4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				915B155A1E9B541D00A29B4F /* SBPlayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		915B155C1E9B541D00A29B4F /* SBPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				915B15601E9B541D00A29B4F /* AppDelegate.h */,
+				915B15611E9B541D00A29B4F /* AppDelegate.m */,
+				915B15631E9B541D00A29B4F /* ViewController.h */,
+				915B15641E9B541D00A29B4F /* ViewController.m */,
+				915B15BB1E9CBB4D00A29B4F /* SBPlayer */,
+				915B15661E9B541D00A29B4F /* Main.storyboard */,
+				915B15691E9B541D00A29B4F /* Assets.xcassets */,
+				915B156B1E9B541D00A29B4F /* LaunchScreen.storyboard */,
+				915B156E1E9B541D00A29B4F /* Info.plist */,
+				915B155D1E9B541D00A29B4F /* Supporting Files */,
+			);
+			path = SBPlayer;
+			sourceTree = "<group>";
+		};
+		915B155D1E9B541D00A29B4F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				915B155E1E9B541D00A29B4F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		915B15BA1E9CBB3C00A29B4F /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				915B15841E9B6BF100A29B4F /* full_screen.png */,
+				915B15851E9B6BF100A29B4F /* full_screen@2x.png */,
+				915B15881E9B718B00A29B4F /* play.png */,
+				915B15891E9B718B00A29B4F /* play@2x.png */,
+				915B158C1E9B73DD00A29B4F /* pause.png */,
+				915B158D1E9B73DD00A29B4F /* pause@2x.png */,
+				915B15901E9B8AAB00A29B4F /* knob.png */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		915B15BB1E9CBB4D00A29B4F /* SBPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				915B157A1E9B565C00A29B4F /* SBPlayer.h */,
+				915B157B1E9B565C00A29B4F /* SBPlayer.m */,
+				915B157D1E9B662800A29B4F /* SBControlView.h */,
+				915B157E1E9B662800A29B4F /* SBControlView.m */,
+				915B15B51E9C78A300A29B4F /* SBPauseOrPlayView.h */,
+				915B15B61E9C78A300A29B4F /* SBPauseOrPlayView.m */,
+				915B15831E9B670900A29B4F /* SBCommonHeader.h */,
+				915B15BA1E9CBB3C00A29B4F /* Source */,
+			);
+			name = SBPlayer;
+			sourceTree = "<group>";
+		};
+		969E8AA3BD3FE25EC6F5487D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2414ECBAC18C549A299A0EA4 /* Pods-SBPlayer.debug.xcconfig */,
+				B39752AFD89E7FDF0F9AD8CF /* Pods-SBPlayer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		915B15591E9B541D00A29B4F /* SBPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 915B15711E9B541D00A29B4F /* Build configuration list for PBXNativeTarget "SBPlayer" */;
+			buildPhases = (
+				8B8FEDAD7C99D616B279ED2C /* [CP] Check Pods Manifest.lock */,
+				915B15561E9B541D00A29B4F /* Sources */,
+				915B15571E9B541D00A29B4F /* Frameworks */,
+				915B15581E9B541D00A29B4F /* Resources */,
+				CC6437A37350EE3C72026C53 /* [CP] Embed Pods Frameworks */,
+				61C0B6551EB52441FF1C1D4B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SBPlayer;
+			productName = SBPlayer;
+			productReference = 915B155A1E9B541D00A29B4F /* SBPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		915B15521E9B541D00A29B4F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = shibiao;
+				TargetAttributes = {
+					915B15591E9B541D00A29B4F = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = M54Y5FDG74;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 915B15551E9B541D00A29B4F /* Build configuration list for PBXProject "SBPlayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 915B15511E9B541D00A29B4F;
+			productRefGroup = 915B155B1E9B541D00A29B4F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				915B15591E9B541D00A29B4F /* SBPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		915B15581E9B541D00A29B4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				915B158B1E9B718B00A29B4F /* play@2x.png in Resources */,
+				915B15911E9B8AAB00A29B4F /* knob.png in Resources */,
+				915B15871E9B6BF100A29B4F /* full_screen@2x.png in Resources */,
+				915B158E1E9B73DD00A29B4F /* pause.png in Resources */,
+				915B15861E9B6BF100A29B4F /* full_screen.png in Resources */,
+				915B158F1E9B73DD00A29B4F /* pause@2x.png in Resources */,
+				915B156D1E9B541D00A29B4F /* LaunchScreen.storyboard in Resources */,
+				915B156A1E9B541D00A29B4F /* Assets.xcassets in Resources */,
+				915B15681E9B541D00A29B4F /* Main.storyboard in Resources */,
+				915B158A1E9B718B00A29B4F /* play.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		61C0B6551EB52441FF1C1D4B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SBPlayer/Pods-SBPlayer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B8FEDAD7C99D616B279ED2C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CC6437A37350EE3C72026C53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SBPlayer/Pods-SBPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		915B15561E9B541D00A29B4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				915B15651E9B541D00A29B4F /* ViewController.m in Sources */,
+				915B15621E9B541D00A29B4F /* AppDelegate.m in Sources */,
+				915B155F1E9B541D00A29B4F /* main.m in Sources */,
+				915B157F1E9B662800A29B4F /* SBControlView.m in Sources */,
+				915B15B71E9C78A300A29B4F /* SBPauseOrPlayView.m in Sources */,
+				915B157C1E9B565C00A29B4F /* SBPlayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		915B15661E9B541D00A29B4F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				915B15671E9B541D00A29B4F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		915B156B1E9B541D00A29B4F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				915B156C1E9B541D00A29B4F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		915B156F1E9B541D00A29B4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		915B15701E9B541D00A29B4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		915B15721E9B541D00A29B4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2414ECBAC18C549A299A0EA4 /* Pods-SBPlayer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M54Y5FDG74;
+				INFOPLIST_FILE = SBPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = s.SBPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		915B15731E9B541D00A29B4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B39752AFD89E7FDF0F9AD8CF /* Pods-SBPlayer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M54Y5FDG74;
+				INFOPLIST_FILE = SBPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = s.SBPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		915B15551E9B541D00A29B4F /* Build configuration list for PBXProject "SBPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				915B156F1E9B541D00A29B4F /* Debug */,
+				915B15701E9B541D00A29B4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		915B15711E9B541D00A29B4F /* Build configuration list for PBXNativeTarget "SBPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				915B15721E9B541D00A29B4F /* Debug */,
+				915B15731E9B541D00A29B4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 915B15521E9B541D00A29B4F /* Project object */;
+}
