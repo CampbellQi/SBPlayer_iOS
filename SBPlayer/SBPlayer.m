@@ -72,8 +72,8 @@ static NSInteger count = 0;
     self = [super init];
     if (self) {
         _url = url;
-        [self assetWithURL:url];
         [self setupPlayerUI];
+        [self assetWithURL:url];
     }
     return self;
 }
@@ -98,7 +98,7 @@ static NSInteger count = 0;
                 break;
             case AVKeyValueStatusFailed:
             {
-                NSLog(@"AVKeyValueStatusFailed失败");
+                NSLog(@"AVKeyValueStatusFailed失败,请检查网络,plist中添加App Transport Security Settings");
             }
                 break;
             case AVKeyValueStatusCancelled:
