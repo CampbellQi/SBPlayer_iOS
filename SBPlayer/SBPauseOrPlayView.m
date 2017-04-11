@@ -8,7 +8,7 @@
 
 #import "SBPauseOrPlayView.h"
 @interface SBPauseOrPlayView ()
-@property (nonatomic,strong) UIButton *imageBtn;
+
 @end
 @implementation SBPauseOrPlayView
 

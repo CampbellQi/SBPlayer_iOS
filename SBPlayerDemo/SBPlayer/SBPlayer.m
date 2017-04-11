@@ -26,6 +26,7 @@
 @property (nonatomic,strong) NSArray *oldConstriants;
 //添加标题
 @property (nonatomic,strong) UILabel *titleLabel;
+
 @end
 static NSInteger count = 0;
 @implementation SBPlayer
@@ -89,10 +90,13 @@ static NSInteger count = 0;
             {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     self.controlView.currentTime = @"00:00";
-                    CGFloat second = self.anAsset.duration.value / self.anAsset.duration.timescale;
-                    self.controlView.totalTime = [self convertTime:second];
-                    self.controlView.minValue = 0;
-                    self.controlView.maxValue = second;
+                    if (!CMTIME_IS_INDEFINITE(self.anAsset.duration)) {
+                        CGFloat second = self.anAsset.duration.value / self.anAsset.duration.timescale;
+                        self.controlView.totalTime = [self convertTime:second];
+                        self.controlView.minValue = 0;
+                        self.controlView.maxValue = second;
+                    }
+                    
                 });
             }
                 break;
@@ -134,7 +138,9 @@ static NSInteger count = 0;
     __weak typeof(self) weakSelf = self;
     playbackTimerObserver = [self.player addPeriodicTimeObserverForInterval:CMTimeMake(1.f, 1.f) queue:NULL usingBlock:^(CMTime time) {
         weakSelf.controlView.value = weakSelf.item.currentTime.value/weakSelf.item.currentTime.timescale;
-        weakSelf.controlView.currentTime = [weakSelf convertTime:weakSelf.controlView.value];
+        if (!CMTIME_IS_INDEFINITE(self.anAsset.duration)) {
+            weakSelf.controlView.currentTime = [weakSelf convertTime:weakSelf.controlView.value];
+        }
         if (count>=5) {
             [weakSelf setSubViewsIsHide:YES];
         }else{
@@ -311,6 +317,7 @@ static NSInteger count = 0;
     [self setSubViewsIsHide:NO];
     count = 0;
 }
+
 -(void)addPauseAndPlayBtn{
     [self addSubview:self.pauseOrPlayView];
     [self.pauseOrPlayView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -353,6 +360,7 @@ static NSInteger count = 0;
         _controlView = [[SBControlView alloc]init];
         _controlView.delegate = self;
         _controlView.backgroundColor = [UIColor clearColor];
+        [_controlView.tapGesture requireGestureRecognizerToFail:self.pauseOrPlayView.imageBtn.gestureRecognizers.firstObject];
     }
     return _controlView;
 }
@@ -423,6 +431,7 @@ static NSInteger count = 0;
         //
     }
 }
+
 -(void)play{
     if (self.player) {
         [self.player play];
@@ -450,4 +459,5 @@ static NSInteger count = 0;
         self.player = nil;
     }
 }
+
 @end

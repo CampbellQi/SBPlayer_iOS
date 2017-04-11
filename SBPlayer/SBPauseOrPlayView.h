@@ -21,6 +21,7 @@
 
 @end
 @interface SBPauseOrPlayView : UIView
+@property (nonatomic,strong) UIButton *imageBtn;
 @property (nonatomic,weak) id<SBPauseOrPlayViewDelegate> delegate;
 
 @end

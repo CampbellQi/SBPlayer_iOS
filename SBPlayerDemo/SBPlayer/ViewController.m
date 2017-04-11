@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //纯代码请用此种方法
+    //http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8 直播网址
     self.player = [[SBPlayer alloc]initWithUrl:[NSURL URLWithString:@"http://download.3g.joy.cn/video/236/60236937/1451280942752_hd.mp4"]];
     [self.player setTitle:@"这是一个标题"];
     [self.view addSubview:self.player];

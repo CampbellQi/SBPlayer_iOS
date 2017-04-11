@@ -43,9 +43,9 @@ static NSInteger padding = 8;
         _slider = [[UISlider alloc]init];
         [_slider setThumbImage:[UIImage imageNamed:@"knob"] forState:UIControlStateNormal];
         _slider.continuous = YES;
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTap:)];
+        self.tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTap:)];
         [_slider addTarget:self action:@selector(handleSliderPosition:) forControlEvents:UIControlEventValueChanged];
-        [_slider addGestureRecognizer:tapGesture];
+        [_slider addGestureRecognizer:self.tapGesture];
         _slider.maximumTrackTintColor = [UIColor clearColor];
         _slider.minimumTrackTintColor = [UIColor whiteColor];
     }

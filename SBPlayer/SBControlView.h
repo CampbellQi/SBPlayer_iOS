@@ -25,7 +25,7 @@
  @param controlView 控制视图
  @param slider UISlider
  */
--(void)controlView:(SBControlView *)controlView draggedPositionWithSlider:(UISlider *)slider;
+-(void)controlView:(SBControlView *)controlView draggedPositionWithSlider:(UISlider *)slider ;
 
 /**
  点击放大按钮的响应事件
@@ -51,7 +51,8 @@
 @property (nonatomic,copy) NSString *totalTime;
 //缓存条当前值
 @property (nonatomic,assign) CGFloat bufferValue;
-
+//UISlider手势
+@property (nonatomic,strong) UITapGestureRecognizer *tapGesture;
 //代理方法
 @property (nonatomic,weak) id<SBControlViewDelegate> delegate;
 
