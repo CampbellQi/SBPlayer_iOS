@@ -364,11 +364,10 @@ static NSInteger count = 0;
 }
 //MARK: SBPauseOrPlayViewDeleagate
 -(void)pauseOrPlayView:(SBPauseOrPlayView *)pauseOrPlayView withState:(BOOL)state{
+    count = 0;
     if (state) {
-        count = 0;
         [self play];
     }else{
-        count = 0;
         [self pause];
     }
 }
@@ -384,6 +383,7 @@ static NSInteger count = 0;
     [self.item seekToTime:pointTime toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
 }
 -(void)controlView:(SBControlView *)controlView withLargeButton:(UIButton *)button{
+    count = 0;
     if (kScreenWidth<kScreenHeight) {
         [self interfaceOrientation:UIInterfaceOrientationLandscapeRight];
     }else{
