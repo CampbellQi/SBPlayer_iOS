@@ -233,7 +233,9 @@ static NSInteger count = 0;
         case UIInterfaceOrientationLandscapeLeft:
         case UIInterfaceOrientationLandscapeRight:
         {
-            self.oldConstriants = [self getCurrentVC].view.constraints;
+            if (!self.oldConstriants) {
+                self.oldConstriants = [self getCurrentVC].view.constraints;
+            }
             [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:0. options:UIViewAnimationOptionTransitionCurlUp animations:^{
                 [[UIApplication sharedApplication].keyWindow addSubview:self];
                 [self mas_makeConstraints:^(MASConstraintMaker *make) {
