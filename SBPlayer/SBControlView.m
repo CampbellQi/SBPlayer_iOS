@@ -84,6 +84,11 @@ static NSInteger padding = 8;
     [self addSubview:self.largeButton];
     //添加约束
     [self addConstraintsForSubviews];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceOrientationDidChange) name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+-(void)deviceOrientationDidChange{
+    //添加约束
+    [self addConstraintsForSubviews];
 }
 -(void)addConstraintsForSubviews{
     [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -93,9 +98,12 @@ static NSInteger padding = 8;
         make.width.mas_equalTo(@50);
         make.centerY.mas_equalTo(@[self.timeLabel,self.slider,self.totalTimeLabel,self.largeButton]);
     }];
-    [self.slider mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.slider mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.timeLabel.mas_right).offset(padding);
         make.right.mas_equalTo(self.totalTimeLabel.mas_left).offset(-padding);
+        if (kScreenWidth<kScreenHeight) {
+            make.width.mas_equalTo(kScreenWidth - 8 - 50 -50- 30 -8 -8);
+        }
     }];
     [self.totalTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.slider.mas_right).offset(padding);

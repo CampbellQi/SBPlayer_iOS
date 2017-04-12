@@ -240,6 +240,7 @@ static NSInteger count = 0;
             if (!self.oldConstriants) {
                 self.oldConstriants = [self getCurrentVC].view.constraints;
             }
+            [self.controlView updateConstraintsIfNeeded];
             [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:0. options:UIViewAnimationOptionTransitionCurlUp animations:^{
                 [[UIApplication sharedApplication].keyWindow addSubview:self];
                 [self mas_makeConstraints:^(MASConstraintMaker *make) {
