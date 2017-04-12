@@ -225,8 +225,11 @@ static NSInteger count = 0;
 //MARK: NotificationCenter
 -(void)SBPlayerItemDidPlayToEndTimeNotification:(NSNotification *)notification{
     [self.item seekToTime:kCMTimeZero];
+    [self setSubViewsIsHide:NO];
+    count = 0;
     [self pause];
     [self.pauseOrPlayView.imageBtn setSelected:NO];
+
 }
 -(void)deviceOrientationDidChange:(NSNotification *)notification{
     UIInterfaceOrientation _interfaceOrientation=[[UIApplication sharedApplication]statusBarOrientation];
