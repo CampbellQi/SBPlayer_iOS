@@ -31,6 +31,10 @@ typedef NS_ENUM(NSInteger,SBPlayerStatus){
 }
 @property (nonatomic,strong) AVPlayer *player;
 @property (nonatomic,strong) AVPlayerItem *item;
+//总时长
+@property (nonatomic,assign) CMTime totalTime;
+//当前时间
+@property (nonatomic,assign) CMTime currentTime;
 //资产AVURLAsset
 @property (nonatomic,strong) AVURLAsset *anAsset;
 //播放器Playback Rate

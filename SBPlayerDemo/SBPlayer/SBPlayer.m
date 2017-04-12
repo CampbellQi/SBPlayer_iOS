@@ -12,10 +12,6 @@
 @property (nonatomic,strong,readonly) AVPlayerLayer *playerLayer;
 //当前播放url
 @property (nonatomic,strong) NSURL *url;
-//总时长
-@property (nonatomic,assign) CMTime totalTime;
-//当前时间
-@property (nonatomic,assign) CMTime currentTime;
 //底部控制视图
 @property (nonatomic,strong) SBControlView *controlView;
 //暂停和播放视图
