@@ -121,6 +121,14 @@ static NSInteger count = 0;
     [self setupPlayerWithAsset:self.anAsset];
 
 }
+-(instancetype)initWithAsset:(AVURLAsset *)asset{
+    self = [super init];
+    if (self) {
+        [self setupPlayerUI];
+        [self setupPlayerWithAsset:asset];
+    }
+    return self;
+}
 -(void)setupPlayerWithAsset:(AVURLAsset *)asset{
     self.item = [[AVPlayerItem alloc]initWithAsset:asset];
     self.player = [[AVPlayer alloc]initWithPlayerItem:self.item];
