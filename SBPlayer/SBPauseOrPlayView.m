@@ -25,9 +25,9 @@
 }
 -(void)handleImageTapAction:(UIButton *)button{
     button.selected = !button.selected;
-    BOOL state = button.isSelected ? YES : NO;
+    _state = button.isSelected ? YES : NO;
     if ([self.delegate respondsToSelector:@selector(pauseOrPlayView:withState:)]) {
-        [self.delegate pauseOrPlayView:self withState:state];
+        [self.delegate pauseOrPlayView:self withState:_state];
     }
 }
 

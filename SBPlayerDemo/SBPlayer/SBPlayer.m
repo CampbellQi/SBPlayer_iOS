@@ -226,6 +226,7 @@ static NSInteger count = 0;
 -(void)SBPlayerItemDidPlayToEndTimeNotification:(NSNotification *)notification{
     [self.item seekToTime:kCMTimeZero];
     [self pause];
+    [self.pauseOrPlayView.imageBtn setSelected:NO];
 }
 -(void)deviceOrientationDidChange:(NSNotification *)notification{
     UIInterfaceOrientation _interfaceOrientation=[[UIApplication sharedApplication]statusBarOrientation];
