@@ -81,6 +81,8 @@ static NSInteger count = 0;
     NSDictionary *options = @{ AVURLAssetPreferPreciseDurationAndTimingKey : @YES };
     self.anAsset = [[AVURLAsset alloc]initWithURL:url options:options];
     NSArray *keys = @[@"duration"];
+    self.controlView.currentTime = @"00:00";
+    self.controlView.totalTime = @"00:00";
     [self.anAsset loadValuesAsynchronouslyForKeys:keys completionHandler:^{
         NSError *error = nil;
         AVKeyValueStatus tracksStatus = [self.anAsset statusOfValueForKey:@"duration" error:&error];
@@ -88,7 +90,6 @@ static NSInteger count = 0;
             case AVKeyValueStatusLoaded:
             {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    self.controlView.currentTime = @"00:00";
                     if (!CMTIME_IS_INDEFINITE(self.anAsset.duration)) {
                         CGFloat second = self.anAsset.duration.value / self.anAsset.duration.timescale;
                         self.controlView.totalTime = [self convertTime:second];

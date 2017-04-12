@@ -27,9 +27,12 @@
         make.top.right.left.mas_equalTo(self.view);
         make.height.mas_equalTo(@250);
     }];
-//    使用xib请用第二种方法
-//    [self.player assetWithURL:[NSURL URLWithString:@"http://download.3g.joy.cn/video/236/60236937/1451280942752_hd.mp4"]];
-//    [self.player setTitle:@"这是一个标题"];
+    /**
+     使用xib请用第二种方法
+     [self.player assetWithURL:[NSURL URLWithString:@"http://download.3g.joy.cn/video/236/60236937/1451280942752_hd.mp4"]];
+     [self.player setTitle:@"这是一个标题"];
+     */
+
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
