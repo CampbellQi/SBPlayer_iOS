@@ -122,7 +122,11 @@ static NSInteger count = 0;
                 break;
         }
     }];
-    self.item = [[AVPlayerItem alloc]initWithAsset:self.anAsset];
+    [self setupPlayerWithAsset:self.anAsset];
+
+}
+-(void)setupPlayerWithAsset:(AVURLAsset *)asset{
+    self.item = [[AVPlayerItem alloc]initWithAsset:asset];
     self.player = [[AVPlayer alloc]initWithPlayerItem:self.item];
     [self.playerLayer displayIfNeeded];
     self.playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
@@ -131,7 +135,6 @@ static NSInteger count = 0;
     [self addKVO];
     //添加消息中心
     [self addNotificationCenter];
-
 }
 //FIXME: Tracking time,跟踪时间的改变
 -(void)addPeriodicTimeObserver{
