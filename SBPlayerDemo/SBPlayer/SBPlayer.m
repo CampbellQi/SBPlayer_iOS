@@ -16,8 +16,6 @@
 @property (nonatomic,assign) CMTime totalTime;
 //当前时间
 @property (nonatomic,assign) CMTime currentTime;
-//资产AVURLAsset
-@property (nonatomic,strong) AVURLAsset *anAsset;
 //底部控制视图
 @property (nonatomic,strong) SBControlView *controlView;
 //暂停和播放视图
@@ -26,7 +24,8 @@
 @property (nonatomic,strong) NSArray *oldConstriants;
 //添加标题
 @property (nonatomic,strong) UILabel *titleLabel;
-
+//加载动画
+@property (nonatomic,strong) UIActivityIndicatorView *activityIndeView;
 @end
 static NSInteger count = 0;
 @implementation SBPlayer
@@ -189,8 +188,10 @@ static NSInteger count = 0;
         self.controlView.bufferValue=timeInterval / totalDuration;
     } else if ([keyPath isEqualToString:@"playbackBufferEmpty"]) { //监听播放器在缓冲数据的状态
         _status = SBPlayerStatusBuffering;
+        [self.activityIndeView startAnimating];
     } else if ([keyPath isEqualToString:@"playbackLikelyToKeepUp"]) {
         NSLog(@"缓冲达到可播放");
+        [self.activityIndeView stopAnimating];
     } else if ([keyPath isEqualToString:@"rate"]){//当rate==0时为暂停,rate==1时为播放,当rate等于负数时为回放
         if ([[change objectForKey:NSKeyValueChangeNewKey]integerValue]==0) {
             _isPlaying=false;
@@ -300,6 +301,15 @@ static NSInteger count = 0;
     [self addPauseAndPlayBtn];
     //添加控制视图
     [self addControlView];
+    //添加加载视图
+    [self addLoadingView];
+}
+-(void)addLoadingView{
+    [self addSubview:self.activityIndeView];
+    [self.activityIndeView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.mas_equalTo(@80);
+        make.center.mas_equalTo(self);
+    }];
 }
 -(void)addTitle{
     [self addSubview:self.titleLabel];
@@ -311,6 +321,7 @@ static NSInteger count = 0;
 }
 -(void)addGestureEvent{
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTapAction:)];
+    tap.delegate = self;
     [self addGestureRecognizer:tap];
 }
 -(void)handleTapAction:(UITapGestureRecognizer *)gesture{
@@ -332,6 +343,14 @@ static NSInteger count = 0;
         make.height.mas_equalTo(@44);
     }];
     [self layoutIfNeeded];
+}
+//懒加载ActivityIndicateView
+-(UIActivityIndicatorView *)activityIndeView{
+    if (!_activityIndeView) {
+        _activityIndeView = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        _activityIndeView.hidesWhenStopped = YES;
+    }
+    return _activityIndeView;
 }
 //懒加载标题
 -(UILabel *)titleLabel{
@@ -397,6 +416,13 @@ static NSInteger count = 0;
     }else{
         [self interfaceOrientation:UIInterfaceOrientationPortrait];
     }
+}
+//MARK: UIGestureRecognizer
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+    if ([touch.view isKindOfClass:[SBControlView class]]) {
+        return NO;
+    }
+    return YES;
 }
 //将数值转换成时间
 - (NSString *)convertTime:(CGFloat)second{

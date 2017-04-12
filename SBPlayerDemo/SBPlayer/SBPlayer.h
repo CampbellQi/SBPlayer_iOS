@@ -26,11 +26,13 @@ typedef NS_ENUM(NSInteger,SBPlayerStatus){
     SBPlayerStatusPlaying,
     SBPlayerStatusStopped,
 };
-@interface SBPlayer : UIView<SBControlViewDelegate,SBPauseOrPlayViewDelegate>{
+@interface SBPlayer : UIView<SBControlViewDelegate,SBPauseOrPlayViewDelegate,UIGestureRecognizerDelegate>{
     id playbackTimerObserver;
 }
 @property (nonatomic,strong) AVPlayer *player;
 @property (nonatomic,strong) AVPlayerItem *item;
+//资产AVURLAsset
+@property (nonatomic,strong) AVURLAsset *anAsset;
 //播放器Playback Rate
 @property (nonatomic,assign) CGFloat rate;
 //播放状态
