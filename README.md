@@ -6,11 +6,17 @@
 ##### SBPlayer结构简单,可以`横屏竖屏`,支持`M3u8、mp4`等格式视频本地播放或者网络播放,通过masonry约束，适配各种尺寸iPhone。
 
 #### SBPlayer 4月11更新后的特点：
+
     *支持缓存功能
+    
     *支持强制横屏和自动横竖屏（主要支持left,right,portrait这三个方向）
+    
     *支持M3u8直播和点播，mp4，mov等等本地视频播放功能
+    
     *代码简单，支持用户自定义
+    
     *相对上一个版本的SBPlayer更加稳定，时候集成进项目中
+    
 ***
 
 ![3](https://github.com/shibiao/SBPlayer_iOS/blob/master/Images/23.gif)
