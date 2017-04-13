@@ -86,19 +86,19 @@ static NSInteger count = 0;
             case AVKeyValueStatusLoaded:
             {
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.activityIndeView startAnimating];
                     if (!CMTIME_IS_INDEFINITE(self.anAsset.duration)) {
                         CGFloat second = self.anAsset.duration.value / self.anAsset.duration.timescale;
                         self.controlView.totalTime = [self convertTime:second];
                         self.controlView.minValue = 0;
                         self.controlView.maxValue = second;
                     }
-                    
                 });
             }
                 break;
             case AVKeyValueStatusFailed:
             {
-                NSLog(@"AVKeyValueStatusFailed失败,请检查网络,plist中添加App Transport Security Settings");
+                NSLog(@"AVKeyValueStatusFailed失败,请检查网络,plist中是否添加App Transport Security Settings");
             }
                 break;
             case AVKeyValueStatusCancelled:
@@ -196,7 +196,9 @@ static NSInteger count = 0;
         self.controlView.bufferValue=timeInterval / totalDuration;
     } else if ([keyPath isEqualToString:@"playbackBufferEmpty"]) { //监听播放器在缓冲数据的状态
         _status = SBPlayerStatusBuffering;
-        [self.activityIndeView startAnimating];
+        if (!self.activityIndeView.isAnimating) {
+            [self.activityIndeView startAnimating];
+        }
     } else if ([keyPath isEqualToString:@"playbackLikelyToKeepUp"]) {
         NSLog(@"缓冲达到可播放");
         [self.activityIndeView stopAnimating];
@@ -245,6 +247,7 @@ static NSInteger count = 0;
         case UIInterfaceOrientationLandscapeLeft:
         case UIInterfaceOrientationLandscapeRight:
         {
+            _isFullScreen = YES;
             if (!self.oldConstriants) {
                 self.oldConstriants = [self getCurrentVC].view.constraints;
             }
@@ -261,6 +264,7 @@ static NSInteger count = 0;
         case UIInterfaceOrientationPortraitUpsideDown:
         case UIInterfaceOrientationPortrait:
         {
+            _isFullScreen = NO;
             [[UIApplication sharedApplication].keyWindow removeFromSuperview];
             [[self getCurrentVC].view addSubview:self];
             [UIView animateKeyframesWithDuration:0.5 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{

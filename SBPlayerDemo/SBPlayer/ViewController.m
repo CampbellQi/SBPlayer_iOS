@@ -22,6 +22,7 @@
     //http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8 直播网址
     self.player = [[SBPlayer alloc]initWithUrl:[NSURL URLWithString:@"http://download.3g.joy.cn/video/236/60236937/1451280942752_hd.mp4"]];
     [self.player setTitle:@"这是一个标题"];
+    self.player.backgroundColor = [UIColor blackColor];
     [self.view addSubview:self.player];
     [self.player mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.right.left.mas_equalTo(self.view);
@@ -32,10 +33,11 @@
      [self.player assetWithURL:[NSURL URLWithString:@"http://download.3g.joy.cn/video/236/60236937/1451280942752_hd.mp4"]];
      [self.player setTitle:@"这是一个标题"];
      */
-
+    
 }
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
 }
 - (IBAction)playOrPause:(id)sender {
     
