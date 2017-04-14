@@ -86,7 +86,6 @@ static NSInteger count = 0;
             case AVKeyValueStatusLoaded:
             {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.activityIndeView startAnimating];
                     if (!CMTIME_IS_INDEFINITE(self.anAsset.duration)) {
                         CGFloat second = self.anAsset.duration.value / self.anAsset.duration.timescale;
                         self.controlView.totalTime = [self convertTime:second];
@@ -321,6 +320,7 @@ static NSInteger count = 0;
 }
 //设置界面
 -(void)setupPlayerUI{
+    [self.activityIndeView startAnimating];
     //添加标题
     [self addTitle];
     //添加点击事件
