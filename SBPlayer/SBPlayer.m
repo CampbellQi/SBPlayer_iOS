@@ -230,6 +230,7 @@ static NSInteger count = 0;
 -(void)addNotificationCenter{
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(SBPlayerItemDidPlayToEndTimeNotification:) name:AVPlayerItemDidPlayToEndTimeNotification object:[self.player currentItem]];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceOrientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(willResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
 
 }
 //MARK: NotificationCenter
@@ -281,6 +282,14 @@ static NSInteger count = 0;
     }
     [[self getCurrentVC].view layoutIfNeeded];
 
+}
+-(void)willResignActive:(NSNotification *)notification{
+    if (_isPlaying) {
+        [self setSubViewsIsHide:NO];
+        count = 0;
+        [self pause];
+        [self.pauseOrPlayView.imageBtn setSelected:NO];
+    }
 }
 //获取当前屏幕显示的viewcontroller
 - (UIViewController *)getCurrentVC
