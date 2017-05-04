@@ -102,7 +102,8 @@ static NSInteger padding = 8;
         make.left.mas_equalTo(self.timeLabel.mas_right).offset(padding);
         make.right.mas_equalTo(self.totalTimeLabel.mas_left).offset(-padding);
         if (kScreenWidth<kScreenHeight) {
-            make.width.mas_equalTo(kScreenWidth - 8 - 50 -50- 30 -8 -8);
+            //后面的几个常数分别是各个控件的间隔和控件的宽度  添加自定义控件需在此修改参数
+            make.width.mas_equalTo(kScreenWidth - padding - 50 - 50 - 30 - padding - padding);
         }
     }];
     [self.totalTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
