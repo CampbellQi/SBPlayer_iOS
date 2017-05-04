@@ -10,6 +10,7 @@
 #import "SBPlayer.h"
 #import <Masonry.h>
 @interface ViewController ()
+
 @property (nonatomic,strong) SBPlayer *player;
 
 @end
@@ -28,6 +29,7 @@
         make.top.right.left.mas_equalTo(self.view);
         make.height.mas_equalTo(@250);
     }];
+    
     /**
      使用xib请用第二种方法
      [self.player assetWithURL:[NSURL URLWithString:@"http://download.3g.joy.cn/video/236/60236937/1451280942752_hd.mp4"]];

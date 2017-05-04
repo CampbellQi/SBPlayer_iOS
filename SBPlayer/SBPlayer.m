@@ -252,6 +252,7 @@ static NSInteger count = 0;
                 self.oldConstriants = [self getCurrentVC].view.constraints;
             }
             [self.controlView updateConstraintsIfNeeded];
+            //删除UIView animate可以去除横竖屏切换过渡动画
             [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:0. options:UIViewAnimationOptionTransitionCurlUp animations:^{
                 [[UIApplication sharedApplication].keyWindow addSubview:self];
                 [self mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -267,6 +268,7 @@ static NSInteger count = 0;
             _isFullScreen = NO;
             [[UIApplication sharedApplication].keyWindow removeFromSuperview];
             [[self getCurrentVC].view addSubview:self];
+            //删除UIView animate可以去除横竖屏切换过渡动画
             [UIView animateKeyframesWithDuration:0.5 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
                 if (self.oldConstriants) {
                     [[self getCurrentVC].view addConstraints:self.oldConstriants];
@@ -318,7 +320,7 @@ static NSInteger count = 0;
 - (void)drawRect:(CGRect)rect {
     [self setupPlayerUI];
 }
-//设置界面
+//MARK: 设置界面 在此方法下面可以添加自定义视图，和删除视图
 -(void)setupPlayerUI{
     [self.activityIndeView startAnimating];
     //添加标题
