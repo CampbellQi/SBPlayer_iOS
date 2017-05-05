@@ -34,7 +34,7 @@
     //约束，也可以使用Frame
     [self.player mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.left.mas_equalTo(self.view);
-        make.top.mas_equalTo(self.view.mas_top).offset(100);
+        make.top.mas_equalTo(self.view.mas_top);
         make.height.mas_equalTo(@250);
     }];
     

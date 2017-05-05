@@ -21,16 +21,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UR4-Tt-RAg">
-                                <rect key="frame" x="164" y="357" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UR4-Tt-RAg">
+                                <rect key="frame" x="149" y="357" width="77" height="30"/>
+                                <state key="normal" title="跳转下一页"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="AFo-40-Ze2"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UR4-Tt-RAg" firstAttribute="centerX" secondItem="ZF7-bQ-N4j" secondAttribute="centerX" id="7QJ-CF-OTF"/>
+                            <constraint firstItem="gM6-65-su9" firstAttribute="top" secondItem="UR4-Tt-RAg" secondAttribute="bottom" constant="280" id="Fsp-oU-zau"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="24D-nt-mfY"/>
                 </viewController>
@@ -53,28 +56,30 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="126" translatesAutoresizingMaskIntoConstraints="NO" id="o1E-BJ-quM">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jb-SZ-Sno">
-                                <rect key="frame" x="158" y="392" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jb-SZ-Sno">
+                                <rect key="frame" x="150" y="392" width="62" height="30"/>
+                                <state key="normal" title="移除视频">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="playOrPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FYO-wy-8ni"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmc-Ys-fj1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmc-Ys-fj1">
                                 <rect key="frame" x="164" y="116" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="o1E-BJ-quM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="D8x-Sb-0FW"/>
-                            <constraint firstAttribute="trailing" secondItem="o1E-BJ-quM" secondAttribute="trailing" id="Jh6-yB-qr5"/>
-                            <constraint firstItem="o1E-BJ-quM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="r6W-T0-a7G"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="o1E-BJ-quM" secondAttribute="bottom" id="syb-QF-rlp"/>
+                            <constraint firstItem="o1E-BJ-quM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4Ia-2C-Hpp"/>
+                            <constraint firstAttribute="trailing" secondItem="o1E-BJ-quM" secondAttribute="trailing" id="D8t-dH-HsN"/>
+                            <constraint firstItem="6Jb-SZ-Sno" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="150" id="DuL-PL-WaV"/>
+                            <constraint firstItem="o1E-BJ-quM" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="UBI-dn-Dcj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6Jb-SZ-Sno" secondAttribute="bottom" constant="245" id="n2H-r8-XNL"/>
+                            <constraint firstItem="o1E-BJ-quM" firstAttribute="centerX" secondItem="Cmc-Ys-fj1" secondAttribute="centerX" id="nXo-Wb-F4g"/>
+                            <constraint firstItem="o1E-BJ-quM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qEx-o6-8Lm"/>
+                            <constraint firstItem="Cmc-Ys-fj1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="96" id="vEV-w1-4UX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="WGr-mA-uZF"/>
@@ -87,7 +92,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Uw4-a3-CcB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="biX-Sy-gbj" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="biX-Sy-gbj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="d0B-9g-rwp"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tkg-9I-VQE">
