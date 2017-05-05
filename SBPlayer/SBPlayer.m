@@ -266,7 +266,7 @@ static NSInteger count = 0;
         case UIInterfaceOrientationPortrait:
         {
             _isFullScreen = NO;
-            [[UIApplication sharedApplication].keyWindow removeFromSuperview];
+//            [[UIApplication sharedApplication].keyWindow removeFromSuperview];
             [[self getCurrentVC].view addSubview:self];
             //删除UIView animate可以去除横竖屏切换过渡动画
             [UIView animateKeyframesWithDuration:0.5 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
@@ -507,12 +507,15 @@ static NSInteger count = 0;
     [self.player removeObserver:self forKeyPath:@"rate"];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:[self.player currentItem]];
     if (self.player) {
+        [self pause];
         self.anAsset = nil;
         self.item = nil;
         self.controlView.value = 0;
         self.controlView.currentTime = @"00:00";
         self.controlView.totalTime = @"00:00";
         self.player = nil;
+        self.activityIndeView = nil;
+        [self removeFromSuperview];
     }
 }
 

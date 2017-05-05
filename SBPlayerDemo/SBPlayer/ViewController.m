@@ -32,8 +32,10 @@
     //添加播放器到视图
     [self.view addSubview:self.player];
     //约束，也可以使用Frame
+    self.automaticallyAdjustsScrollViewInsets = NO;
     [self.player mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.right.left.mas_equalTo(self.view);
+        make.right.left.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.view.mas_top).offset(100);
         make.height.mas_equalTo(@250);
     }];
     
@@ -50,7 +52,8 @@
 }
 - (IBAction)playOrPause:(id)sender {
     
-    [self.player stop];
+//    [self.player stop];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
