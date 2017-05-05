@@ -251,7 +251,7 @@ static NSInteger count = 0;
             if (!self.oldConstriants) {
                 self.oldConstriants = [self getCurrentVC].view.constraints;
             }
-            [self removeFromSuperview];
+//            [self removeFromSuperview];
             [self.controlView updateConstraintsIfNeeded];
             //删除UIView animate可以去除横竖屏切换过渡动画
             [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:0. options:UIViewAnimationOptionTransitionCurlUp animations:^{
@@ -270,7 +270,6 @@ static NSInteger count = 0;
             _isFullScreen = NO;
             [self removeFromSuperview];
             [[self getCurrentVC].view addSubview:self];
-            [[self getCurrentVC].view insertSubview:self atIndex:0];
             //删除UIView animate可以去除横竖屏切换过渡动画
             [UIView animateKeyframesWithDuration:0.5 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
                 if (self.oldConstriants) {
