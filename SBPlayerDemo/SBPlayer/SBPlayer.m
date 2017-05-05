@@ -251,12 +251,14 @@ static NSInteger count = 0;
             if (!self.oldConstriants) {
                 self.oldConstriants = [self getCurrentVC].view.constraints;
             }
+            [self removeFromSuperview];
             [self.controlView updateConstraintsIfNeeded];
             //删除UIView animate可以去除横竖屏切换过渡动画
             [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:0. options:UIViewAnimationOptionTransitionCurlUp animations:^{
                 [[UIApplication sharedApplication].keyWindow addSubview:self];
                 [self mas_makeConstraints:^(MASConstraintMaker *make) {
                     make.edges.mas_equalTo([UIApplication sharedApplication].keyWindow);
+                    
                 }];
                 [self layoutIfNeeded];
             } completion:nil];
@@ -266,8 +268,9 @@ static NSInteger count = 0;
         case UIInterfaceOrientationPortrait:
         {
             _isFullScreen = NO;
-            [[UIApplication sharedApplication].keyWindow removeFromSuperview];
+            [self removeFromSuperview];
             [[self getCurrentVC].view addSubview:self];
+            [[self getCurrentVC].view insertSubview:self atIndex:0];
             //删除UIView animate可以去除横竖屏切换过渡动画
             [UIView animateKeyframesWithDuration:0.5 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
                 if (self.oldConstriants) {
@@ -506,6 +509,7 @@ static NSInteger count = 0;
     [self.item removeObserver:self forKeyPath:@"playbackLikelyToKeepUp"];
     [self.player removeObserver:self forKeyPath:@"rate"];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:[self.player currentItem]];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
     if (self.player) {
         [self pause];
         self.anAsset = nil;

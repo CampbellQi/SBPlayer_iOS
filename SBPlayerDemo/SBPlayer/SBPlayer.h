@@ -30,6 +30,7 @@ typedef NS_ENUM(NSInteger,SBPlayerStatus){
     id playbackTimerObserver;
 }
 @property (nonatomic,strong) AVPlayer *player;
+
 @property (nonatomic,strong) AVPlayerItem *item;
 //总时长
 @property (nonatomic,assign) CMTime totalTime;
@@ -47,7 +48,6 @@ typedef NS_ENUM(NSInteger,SBPlayerStatus){
 @property (nonatomic,assign,readonly) BOOL isPlaying;
 //是否全屏
 @property (nonatomic,assign,readonly) BOOL isFullScreen;
-
 //设置标题
 @property (nonatomic,copy) NSString *title;
 //与url初始化
