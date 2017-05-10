@@ -97,7 +97,7 @@ static NSInteger count = 0;
                 break;
             case AVKeyValueStatusFailed:
             {
-                NSLog(@"AVKeyValueStatusFailed失败,请检查网络,plist中是否添加App Transport Security Settings");
+                NSLog(@"AVKeyValueStatusFailed失败,请检查网络,或查看plist中是否添加App Transport Security Settings");
             }
                 break;
             case AVKeyValueStatusCancelled:
@@ -171,7 +171,6 @@ static NSInteger count = 0;
             {
                 _status = SBPlayerStatusReadyToPlay;
                 NSLog(@"AVPlayerItemStatusReadyToPlay");
-                
             }
                 break;
             case AVPlayerItemStatusFailed:
@@ -230,7 +229,6 @@ static NSInteger count = 0;
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(SBPlayerItemDidPlayToEndTimeNotification:) name:AVPlayerItemDidPlayToEndTimeNotification object:[self.player currentItem]];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceOrientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(willResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
-
 }
 //MARK: NotificationCenter
 -(void)SBPlayerItemDidPlayToEndTimeNotification:(NSNotification *)notification{
@@ -294,6 +292,7 @@ static NSInteger count = 0;
         [self.pauseOrPlayView.imageBtn setSelected:NO];
     }
 }
+
 //获取当前屏幕显示的viewcontroller
 - (UIViewController *)getCurrentVC
 {
@@ -509,6 +508,7 @@ static NSInteger count = 0;
     [self.player removeObserver:self forKeyPath:@"rate"];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:[self.player currentItem]];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationWillResignActiveNotification object:nil];
     if (self.player) {
         [self pause];
         self.anAsset = nil;
