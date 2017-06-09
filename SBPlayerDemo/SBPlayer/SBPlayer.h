@@ -12,7 +12,7 @@
 #import "SBControlView.h"
 #import "SBPauseOrPlayView.h"
 //横竖屏的时候过渡动画时间，设置为0.0则是无动画
-#define kTransitionTime 0.1
+#define kTransitionTime 0.2
 //填充模式枚举值
 typedef NS_ENUM(NSInteger,SBLayerVideoGravity){
     SBLayerVideoGravityResizeAspect,

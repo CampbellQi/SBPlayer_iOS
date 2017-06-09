@@ -333,10 +333,12 @@ static NSInteger count = 0;
     //初始化时间
     [self initTimeLabels];
 }
+//初始化时间
 -(void)initTimeLabels{
     self.controlView.currentTime = @"00:00";
     self.controlView.totalTime = @"00:00";
 }
+//添加加载视图
 -(void)addLoadingView{
     [self addSubview:self.activityIndeView];
     [self.activityIndeView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -344,6 +346,7 @@ static NSInteger count = 0;
         make.center.mas_equalTo(self);
     }];
 }
+//添加标题
 -(void)addTitle{
     [self addSubview:self.titleLabel];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -352,6 +355,7 @@ static NSInteger count = 0;
         make.width.mas_equalTo(self.mas_width);
     }];
 }
+//添加点击事件
 -(void)addGestureEvent{
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTapAction:)];
     tap.delegate = self;
@@ -361,13 +365,14 @@ static NSInteger count = 0;
     [self setSubViewsIsHide:NO];
     count = 0;
 }
-
+//添加播放和暂停按钮
 -(void)addPauseAndPlayBtn{
     [self addSubview:self.pauseOrPlayView];
     [self.pauseOrPlayView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self);
     }];
 }
+//添加控制视图
 -(void)addControlView{
 
     [self addSubview:self.controlView];
