@@ -77,8 +77,7 @@ static NSInteger count = 0;
     NSDictionary *options = @{ AVURLAssetPreferPreciseDurationAndTimingKey : @YES };
     self.anAsset = [[AVURLAsset alloc]initWithURL:url options:options];
     NSArray *keys = @[@"duration"];
-    self.controlView.currentTime = @"00:00";
-    self.controlView.totalTime = @"00:00";
+
     [self.anAsset loadValuesAsynchronouslyForKeys:keys completionHandler:^{
         NSError *error = nil;
         AVKeyValueStatus tracksStatus = [self.anAsset statusOfValueForKey:@"duration" error:&error];
@@ -249,14 +248,12 @@ static NSInteger count = 0;
             if (!self.oldConstriants) {
                 self.oldConstriants = [self getCurrentVC].view.constraints;
             }
-//            [self removeFromSuperview];
             [self.controlView updateConstraintsIfNeeded];
             //删除UIView animate可以去除横竖屏切换过渡动画
-            [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:0. options:UIViewAnimationOptionTransitionCurlUp animations:^{
+            [UIView animateWithDuration:kTransitionTime delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:0. options:UIViewAnimationOptionTransitionCurlUp animations:^{
                 [[UIApplication sharedApplication].keyWindow addSubview:self];
                 [self mas_makeConstraints:^(MASConstraintMaker *make) {
                     make.edges.mas_equalTo([UIApplication sharedApplication].keyWindow);
-                    
                 }];
                 [self layoutIfNeeded];
             } completion:nil];
@@ -266,10 +263,9 @@ static NSInteger count = 0;
         case UIInterfaceOrientationPortrait:
         {
             _isFullScreen = NO;
-            [self removeFromSuperview];
             [[self getCurrentVC].view addSubview:self];
             //删除UIView animate可以去除横竖屏切换过渡动画
-            [UIView animateKeyframesWithDuration:0.5 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
+            [UIView animateKeyframesWithDuration:kTransitionTime delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
                 if (self.oldConstriants) {
                     [[self getCurrentVC].view addConstraints:self.oldConstriants];
                 }
@@ -334,6 +330,12 @@ static NSInteger count = 0;
     [self addControlView];
     //添加加载视图
     [self addLoadingView];
+    //初始化时间
+    [self initTimeLabels];
+}
+-(void)initTimeLabels{
+    self.controlView.currentTime = @"00:00";
+    self.controlView.totalTime = @"00:00";
 }
 -(void)addLoadingView{
     [self addSubview:self.activityIndeView];

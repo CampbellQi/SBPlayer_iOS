@@ -11,6 +11,8 @@
 #import "SBCommonHeader.h"
 #import "SBControlView.h"
 #import "SBPauseOrPlayView.h"
+//横竖屏的时候过渡动画时间，设置为0.0则是无动画
+#define kTransitionTime 0.1
 //填充模式枚举值
 typedef NS_ENUM(NSInteger,SBLayerVideoGravity){
     SBLayerVideoGravityResizeAspect,
@@ -29,8 +31,9 @@ typedef NS_ENUM(NSInteger,SBPlayerStatus){
 @interface SBPlayer : UIView<SBControlViewDelegate,SBPauseOrPlayViewDelegate,UIGestureRecognizerDelegate>{
     id playbackTimerObserver;
 }
+//AVPlayer
 @property (nonatomic,strong) AVPlayer *player;
-
+//AVPlayer的播放item
 @property (nonatomic,strong) AVPlayerItem *item;
 //总时长
 @property (nonatomic,assign) CMTime totalTime;
@@ -60,7 +63,7 @@ typedef NS_ENUM(NSInteger,SBPlayerStatus){
 -(void)play;
 //暂停
 -(void)pause;
-//停止 //移除当前视频播放下一个，调用Stop方法
+//停止 （移除当前视频播放下一个或者销毁视频，需调用Stop方法）
 -(void)stop;
 
 @end
