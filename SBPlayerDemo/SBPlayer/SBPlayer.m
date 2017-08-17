@@ -96,7 +96,7 @@ static NSInteger count = 0;
                 break;
             case AVKeyValueStatusFailed:
             {
-                NSLog(@"AVKeyValueStatusFailed失败,请检查网络,或查看plist中是否添加App Transport Security Settings");
+                //NSLog(@"AVKeyValueStatusFailed失败,请检查网络,或查看plist中是否添加App Transport Security Settings");
             }
                 break;
             case AVKeyValueStatusCancelled:
