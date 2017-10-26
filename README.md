@@ -43,6 +43,5 @@
 ```
 
 SBPlayer macOS版 : http://www.jianshu.com/p/1ad52c702190
-* 邮件(956035125@qq.com)
 * github: [github](https://github.com/shibiao)
 * 详细请看简书： [iOS通过AVPlayer打造自己的视频播放器](http://www.jianshu.com/p/ffe1bd598bf2)
