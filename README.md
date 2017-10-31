@@ -7,7 +7,6 @@
 
 ![3](https://github.com/shibiao/SBPlayer_iOS/blob/master/Images/23.gif)
 
-![1](https://github.com/shibiao/SBPlayer_iOS/blob/master/Images/QQ20170411-153557.png)
 
 ***
 #### 使用方法：
